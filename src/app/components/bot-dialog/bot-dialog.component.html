@@ -1,0 +1,9 @@
+<mat-card style="margin-bottom: 20px; margin-right: 20px;" class="mat-elevation-z0" *ngIf="owner === 'bot'">
+  <h4>{{ owner }}</h4>
+  {{ message }}
+</mat-card>
+
+<mat-card style="margin-bottom: 20px; margin-left: 20px;" class="mat-elevation-z0" *ngIf="owner !== 'bot'">
+  <h4>{{ owner }}</h4>
+  {{ message }}
+</mat-card>

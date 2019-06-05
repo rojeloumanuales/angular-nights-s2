@@ -1,0 +1,11 @@
+{
+  "/api/cakechat": {
+    "target": "https://cakechat.replika.ai/cakechat_api/v1/actions",
+    "pathRewrite": {
+      "^/api/cakechat": ""
+    },
+    "changeOrigin": true,
+    "debug": true
+  }
+
+}

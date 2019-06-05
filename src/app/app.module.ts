@@ -9,11 +9,14 @@ import { HeaderComponent } from './pages/layouts/header/header.component'
 import { HomeComponent } from './pages/home/home.component'
 import { FeedComponent } from './components/feed/feed.component'
 import { FormsModule } from '@angular/forms'
+import { ChatServiceService } from './services/chat-service.service'
+import { HttpClientModule } from '@angular/common/http'
+import { BotDialogComponent } from './components/bot-dialog/bot-dialog.component'
 
 @NgModule({
-	declarations: [ AppComponent, HeaderComponent, HomeComponent, FeedComponent ],
-	imports: [ MaterialModule, BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule ],
-	providers: [],
+	declarations: [ AppComponent, HeaderComponent, HomeComponent, FeedComponent, BotDialogComponent ],
+	imports: [ MaterialModule, BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule, HttpClientModule ],
+	providers: [ ChatServiceService ],
 	bootstrap: [ AppComponent ]
 })
 export class AppModule {}

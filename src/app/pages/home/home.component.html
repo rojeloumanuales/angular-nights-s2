@@ -1,5 +1,5 @@
 <div class="body">
-  <mat-card style="margin-bottom: 20px;" class="mat-elevation-z0">
+  <!-- <mat-card style="margin-bottom: 20px;" class="mat-elevation-z0">
     <mat-form-field style="display: block;" appearance="outline">
       <mat-label>Who are you?</mat-label>
       <input matInput [(ngModel)]="feed.author">
@@ -16,5 +16,17 @@
   </mat-card>
   <app-feed *ngFor="let post of posts; let i = index" author="{{ post.author }}" message="{{ post.message }}"
     [(totalLikes)]="post.liked" [(totalDislikes)]="post.disliked">
-  </app-feed>
+  </app-feed> -->
+
+  <div style="max-height: 500px; height: 500px; overflow-y: auto; margin-bottom: 20px; padding: 10px;" #convoBox
+    [scrollTop]="convoBox.scrollHeight">
+    <app-bot-dialog *ngFor="let msg of messages" owner="{{ msg.owner}}" message="{{ msg.message}}"></app-bot-dialog>
+  </div>
+  <mat-card style="margin-bottom: 20px;" class="mat-elevation-z0">
+    <mat-form-field style="display: block;" appearance="outline">
+      <mat-label>Chat with Chatbot</mat-label>
+      <input matInput (keypress)="post($event)" [(ngModel)]="messageModel.message" [disabled]="!canSendMessage"
+        #inputBox>
+    </mat-form-field>
+  </mat-card>
 </div>
