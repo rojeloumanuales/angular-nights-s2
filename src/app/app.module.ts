@@ -9,10 +9,12 @@ import { HeaderComponent } from './pages/layouts/header/header.component'
 import { HomeComponent } from './pages/home/home.component'
 import { FeedComponent } from './components/feed/feed.component'
 import { FormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
 	declarations: [ AppComponent, HeaderComponent, HomeComponent, FeedComponent ],
-	imports: [ MaterialModule, BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule ],
+	imports: [ ReactiveFormsModule, MaterialModule, BrowserModule, AppRoutingModule, BrowserAnimationsModule, FormsModule, HttpClientModule ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })
